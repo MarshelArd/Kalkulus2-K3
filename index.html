@@ -11,104 +11,121 @@
   </head>
   <body>
     <!-- Navbar Start -->
-    <div class="fixed top-0 z-[999git ] navbar bg-base-100 lg:px-10">
-        <div class="navbar-start w-full flex justify-between lg:justify-normal">
-          <div class="dropdown">
-            <div tabIndex=0 role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+    <div
+      class="fixed top-0 z-[999] h-20 navbar bg-gray-900 bg-opacity-75 text-white lg:px-10"
+    >
+      <div
+        class="navbar-start w-full flex justify-between lg:justify-normal pt-3"
+      >
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Materi</a>
-              </li>
-              <li>
-                <a>Help</a>
-              </li>
-              <li>
-                <a>Kelompok</a>
-              </li>
-            </ul>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
           </div>
-          <a class="btn btn-ghost text-xl">Universitas Siliwangi</a>
-        </div>
-        <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 gap-4">
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-900 bg-opacity-75 rounded-box w-52"
+          >
             <li>
-              <a>Home</a>
+              <a href="/index.html#home">Home</a>
+            </li>
+            <li>
+              <a href="/index.html#materi">Materi</a>
+            </li>
+            <li>
+              <a href="/index.html#kelompokRoot">Kelompok</a>
             </li>
             <li>
               <a href="/Hitung/index.html">Kalkulator</a>
             </li>
-            <li>
-              <a>Help</a>
-            </li>
-            <li>
-              <a>Kelompok</a>
-            </li>
           </ul>
         </div>
+        <a class="flex items-center gap-3 cursor-pointer"
+          ><img
+            src="../asset/images/logounsil.png"
+            alt=""
+            class="w-12 hidden md:block"
+          />
+          <div>
+            <h1 class="text-2xl font-semibold">Universitas Siliwangi</h1>
+            <p class="text-right md:text-left">Kelompok 3</p>
+          </div>
+          <img
+            src="../asset/images/logounsil.png"
+            alt=""
+            class="w-12 md:hidden"
+          />
+        </a>
       </div>
+      <div class="navbar-end hidden pt-4 lg:flex">
+        <ul class="menu menu-horizontal px-1 gap-2">
+          <li class="text-lg">
+            <a href="/index.html#home">Home</a>
+          </li>
+          <li class="text-lg">
+            <a href="/Hitung/index.html">Kalkulator</a>
+          </li>
+          <li class="text-lg">
+            <a href="/index.html#materi">Materi</a>
+          </li>
+          <li class="text-lg">
+            <a href="/index.html#kelompokRoot">Kelompok</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <!-- Navbar End -->
     <!-- Hero Start -->
-    <div class="hero min-h-screen" style="background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-mathematics-books-green-simplicity-image_782466.jpg);">
+    <div class="hero min-h-screen" id="home" style="background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-mathematics-books-green-simplicity-image_782466.jpg);">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
-          <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-            <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            <button class="btn btn-primary">Get Started</button>
+          <div class="max-w-[70vh] md:max-w-full flex flex-col items-center justify-center">
+            <h1 class="mb-5 text-5xl md:text-8xl font-bold">Kalkulator Vektor</h1>
+            <p class="mb-5 text-lg max-w-[70%]">Program ini berfungsi untuk menghitung perkalian, sudut antara dua vektor, dan cosinus arah.</p>
           </div>
         </div>
       </div>
     <!-- Hero End -->
     <!-- Materi Start -->
     <div class="section">
-      <i class="fa-solid fa-angle-left" id="prevBtn"></i>
-      <ul class="ul-listMateri" id="slideContainer">
-        <li class="cardMateri">
-          <h1 class="judul">VEKTOR PERKALIAN</h1>
-          <span class="paragrafmateri">
-            <p>Perkalian vektor adalah operasi matematika yang menghasilkan vektor baru dari dua atau lebih vektor. Ada dua jenis perkalian vektor yang umum: perkalian dot (skalar) dan perkalian cross (vektor).</p>
-            <p>Rumus: A⋅B=∣A∣∣B∣cos(θ)</p>
-          </span>
-        </li>
-        <li class="cardMateri">
-          <h1 class="judul">SUDUT ANTARA DUA VEKTOR</h1>
-          <span class="paragrafmateri">
-            <p>Sudut antara dua vektor adalah sudut yang terbentuk antara kedua vektor tersebut ketika ditempatkan pada titik asal yang sama. Sudut ini dapat dihitung menggunakan rumus trigonometri.</p>
-            <p>Rumus: cos(θ)= A⋅B / ​∣A∣∣B∣</p>
-          </span>
-        </li>
-        <li class="cardMateri">
-          <h1 class="judul">COSINUS ARAH</h1>
-          <span class="paragrafmateri">
-            <p>Cosinus arah adalah nilai kosinus dari sudut antara dua vektor. Ini menggambarkan seberapa sejajar atau seberlawanan kedua vektor tersebut.</p>
-            <p>Rumus: Vektor OP = √(〖a1〗^2+ 〖a2〗^2+ 〖a3〗^2 ) </p>
-          </span>
-        </li>
-      </ul>
-      <i class="fa-solid fa-angle-right" id="nextBtn"></i>
-      <script src="materi.js"></script>
-    </div>
+        <i class="fa-solid fa-angle-left"></i>
+            <ul class="ul-listMateri">
+                <li class="cardMateri">
+                    <h1 class="judul">VEKTOR PERKALIAN</h1>
+                    <span class="paragrafmateri">
+                    <p>Perkalian vektor adalah operasi matematika yang menghasilkan vektor baru dari dua atau lebih vektor. Ada dua jenis perkalian vektor yang umum: perkalian dot (skalar) dan perkalian cross (vektor).</p>
+                    <p>Rumus: A⋅B=∣A∣∣B∣cos(θ)</p>
+                    </span>
+                </li>
+                <li class="cardMateri">
+                    <h1 class="judul">SUDUT ANTARA DUA VEKTOR</h1>
+                    <span class="paragrafmateri">
+                    <p>Sudut antara dua vektor adalah sudut yang terbentuk antara kedua vektor tersebut ketika ditempatkan pada titik asal yang sama. Sudut ini dapat dihitung menggunakan rumus trigonometri.</p>
+                    <p>Rumus: cos(θ)= A⋅B / ​∣A∣∣B∣</p>
+                    </span>
+                </li>
+                <li class="cardMateri">
+                    <h1 class="judul">COSINUS ARAH</h1>
+                    <span class="paragrafmateri">
+                    <p>Cosinus arah adalah nilai kosinus dari sudut antara dua vektor. Ini menggambarkan seberapa sejajar atau seberlawanan kedua vektor tersebut.</p>
+                    <p>Rumus: Vektor OP = √(〖a1〗^2+ 〖a2〗^2+ 〖a3〗^2 ) </p>
+                    </span>
+                </li>
+            </ul>
+            <i class="fa-solid fa-angle-right"></i>
+    </div>  
     <!-- Materi End-->
     <!-- Kelompok Start -->
     <div id="kelompokRoot" class="flex justify-around flex-wrap items-center gap-7 p-10"></div>
