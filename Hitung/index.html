@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="flex flex-col justify-center items-center px-10 gap-10 my-10 md:w-full"
+    >
+      <h1 class="text-3xl font-bold text-center">Vector Calculator</h1>
+
+      <div
+        class="flex flex-col md:w-full md:flex-row gap-8 items-stretch justify-center"
+      >
+        <div
+          class="flex flex-col gap-8 md:w-[500px] shadow-2xl p-4 bg-gray-900 rounded-lg"
+        >
+          <div class="grid grid-cols-3 gap-6 text-center">
+            <div class="items-center justify-center">
+              <button class="btn btn-outline rounded-full">help</button>
+            </div>
+            <div class="flex items-center justify-center h-full">
+              <h1 class="text-sm">Vektor 1</h1>
+            </div>
+            <div class="flex items-center justify-center h-full">
+              <h2 class="text-sm">Vektor 2</h2>
+            </div>
+            <!-- {/* untuk Variabel I */} -->
+            <div class="text-center">I</div>
+            <div>
+              <input type="number" id="vektor1I" class="w-10" />
+            </div>
+            <div>
+              <input type="number" id="vektor2I" class="w-10" />
+            </div>
+            <!-- {/* Untuk variabel J */} -->
+            <div class="text-center">J</div>
+            <div>
+              <input type="number" id="vektor1J" class="w-10" />
+            </div>
+            <div>
+              <input type="number" id="vektor2J" class="w-10" />
+            </div>
+            <!-- {/* Untuk variabel K */} -->
+            <div class="text-center">K</div>
+            <div>
+              <input type="number" id="vektor1K" class="w-10" />
+            </div>
+            <div>
+              <input type="number" id="vektor2K" class="w-10" />
+            </div>
+          </div>
+          <div class="flex flex-col justify-center">
+            <button
+              id="hitungBtn"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Hitung
+            </button>
+          </div>
+        </div>
+        <HasilHitung vektor1="{hasil?.vector1}" vektor2="{hasil?.vector2}" />
+      </div>
+    </div>
+    <!-- Batas Input -->
+    <!-- Hasil Hitung -->
+    <div class="w-full h-full border bg-black rounded-lg border-gray-300">
+      <div class="grid grid-cols-3 h-full">
+        <div class="border p-3">
+          <h1>Perkalian vektor</h1>
+        </div>
+        <div class="border p-3">
+          <h1 class="text-center">=</h1>
+        </div>
+        <div class="border p-3">
+          <h1 id="perkalianVektor"></h1>
+        </div>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="border p-3">
+          <h1>Sudut antara 2 vektor</h1>
+        </div>
+        <div class="border p-3">
+          <h1 class="text-center">=</h1>
+        </div>
+        <div class="border p-3">
+          <h1 id="sudutVektor"></h1>
+        </div>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="h-full border-b-0 border p-3">
+          <h1>Kosinus arah vektor</h1>
+        </div>
+        <div class="h-full border-b-0 border p-3">
+          <h1 class="text-center">=</h1>
+        </div>
+        <div class="h-full border border-b-0 p-3">
+          <ul>
+            <li>Vektor 1 :</li>
+            <li>
+              <ul>
+                <li class="ml-10">cos a = <span id="v1cosA"></span></li>
+                <li class="ml-10">cos b = <span id="v1cosB"></span></li>
+                <li class="ml-10">
+                  cos c =
+                  <span id="v1cosC"></span>
+                </li>
+              </ul>
+            </li>
+            <li>Vektor 2 :</li>
+            <li>
+              <ul>
+                <li class="ml-10">cos a = <span id="v2cosA"></span></li>
+                <li class="ml-10">cos b = <span id="v2cosB"></span></li>
+                <li class="ml-10">cos c = <span id="v2cosC"></span></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="rumus.js"></script>
+    <script type="module" src="scriptInput.js"></script>
+    <script type="text/javascript" src="scriptOutput.js"></script>
+  </body>
+</html>
