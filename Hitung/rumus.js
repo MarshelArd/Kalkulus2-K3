@@ -9,15 +9,23 @@ export function dotProduct(vector1, vector2) {
     return dotProduct;
 }
 
+function isDecimal(num) {
+    return num % 1 !== 0;
+}
+
 // Function to calculate the magnitude of a vector
-export function magnitude(vector) {
+export function magnitude(vector, code) {
     let sumOfSquares = 0;
     for (let i = 0; i < vector.length; i++) {
         sumOfSquares += vector[i] * vector[i];
     }
     let panjangVektor = Math.sqrt(sumOfSquares);
+    if (code) {
+        if (isDecimal(panjangVektor)) return sumOfSquares
+    };
+    return panjangVektor;
 
-    return panjangVektor.toFixed(3);
+    
 }
 
 // Function to calculate the angle between two vectors in degrees
@@ -36,18 +44,18 @@ export function angleBetweenVectors(vector1, vector2) {
 }
 
 export function kosinusA(vector1) {
-    let panjangVektor = magnitude(vector1);
+    let panjangVektor = magnitude(vector1, "code");
 
-    return `${vector1[0]}/${panjangVektor}`
+    return `\\frac{${vector1[0]}}{\\sqrt{${panjangVektor}}}`
 }
 
 export function kosinusB(vector1) {
-    let panjangVektor = magnitude(vector1);
+    let panjangVektor = magnitude(vector1, "code");
 
-    return `${vector1[1]}/${panjangVektor}`
+    return `\\frac{${vector1[1]}}{\\sqrt{${panjangVektor}}}`
 }
 export function kosinusC(vector1) {
-    let panjangVektor = magnitude(vector1);
+    let panjangVektor = magnitude(vector1, "code");
 
-    return `${vector1[2]}/${panjangVektor}`
+    return `\\frac{${vector1[2]}}{\\sqrt{${panjangVektor}}}`
 }

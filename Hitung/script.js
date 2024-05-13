@@ -6,6 +6,10 @@ import {
   kosinusC,
 } from "./rumus.js";
 
+const MQ = MathQuill.getInterface(2);
+
+
+
 const vektor1I = document.getElementById("vektor1I");
 const vektor1J = document.getElementById("vektor1J");
 const vektor1K = document.getElementById("vektor1K");
@@ -26,8 +30,20 @@ const v2cosA = document.getElementById("v2cosA");
 const v2cosB = document.getElementById("v2cosB");
 const v2cosC = document.getElementById("v2cosC");
 
+const clearInputBtn = document.getElementById("clrInputBtn");
+
 let data = { vector1: [], vector2: [] };
 let hasil = null;
+
+clearInputBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  vektor1I.value = "";
+  vektor1J.value = "";
+  vektor1K.value = "";
+  vektor2I.value = "";
+  vektor2J.value = "";
+  vektor2K.value = "";
+})
 
 hitungBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -51,7 +67,7 @@ hitungBtn.addEventListener("click", (e) => {
   //   end inputing data
 
   // processing data
-
+  console.log(hasil)
   data.vector1?.length === 3
     ? (hasil = {
         sudutVektor: angleBetweenVectors(data.vector1, data.vector2),
@@ -87,22 +103,34 @@ hitungBtn.addEventListener("click", (e) => {
       });
 
   const calculated = () => {
-    hasilKali.innerText = hasil.perkalianVektor;
-    hasilSudut.innerText = `${hasil.sudutVektor}°`;
-    v1cosA.innerText = hasil.cosinusArah.vektor1.cosa;
-    v1cosB.innerText = hasil.cosinusArah.vektor1.cosb;
+    hasilKali.textContent = hasil.perkalianVektor;
+    hasilSudut.textContent = `${hasil.sudutVektor}°`;
+    v1cosA.textContent = hasil.cosinusArah.vektor1.cosa;
+    v1cosB.textContent = hasil.cosinusArah.vektor1.cosb;
     hasil.cosinusArah.vektor1.cosc === null
-      ? (v1cosC.innerText = "-")
-      : (v1cosC.innerText = hasil.cosinusArah.vektor1.cosc);
+      ? (v1cosC.textContent = "-")
+      : (v1cosC.textContent = hasil.cosinusArah.vektor1.cosc);
 
-    v2cosA.innerText = hasil.cosinusArah.vektor2.cosa;
-    v2cosB.innerText = hasil.cosinusArah.vektor2.cosb;
+    v2cosA.textContent = hasil.cosinusArah.vektor2.cosa;
+    v2cosB.textContent = hasil.cosinusArah.vektor2.cosb;
     hasil.cosinusArah.vektor2.cosc === null
-      ? (v2cosC.innerText = "-")
-      : (v2cosC.innerText = hasil.cosinusArah.vektor2.cosc);
+      ? (v2cosC.textContent = "-")
+      : (v2cosC.textContent = hasil.cosinusArah.vektor2.cosc);
   };
 
   hasil ? calculated() : null;
+
+
+  MQ.StaticMath(hasilKali);
+  MQ.StaticMath(hasilSudut);
+  MQ.StaticMath(v1cosA);
+  MQ.StaticMath(v1cosB);
+  MQ.StaticMath(v1cosC);
+  MQ.StaticMath(v2cosA);
+  MQ.StaticMath(v2cosB);
+  MQ.StaticMath(v2cosC);
+
+  
 
   console.log(hasil);
 });

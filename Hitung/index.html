@@ -10,122 +10,215 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.js"></script>
   </head>
   <body>
-    <div
-      class="flex flex-col justify-center items-center px-10 gap-10 my-10 md:w-full text-white"
-    >
-      <h1 class="text-3xl font-bold text-center">Vector Calculator</h1>
-
-      <div
-        class="flex flex-col md:w-full md:flex-row gap-8 items-stretch justify-center"
-      >
-        <div
-          class="flex flex-col gap-8 md:w-[500px] shadow-2xl p-4 bg-gray-900 rounded-lg"
-        >
-          <div class="grid grid-cols-3 gap-6 text-center">
-            <div class="items-center justify-center">
-              <button class="btn btn-outline rounded-full">help</button>
-            </div>
-            <div class="flex items-center justify-center h-full">
-              <h1 class="text-sm">Vektor 1</h1>
-            </div>
-            <div class="flex items-center justify-center h-full">
-              <h2 class="text-sm">Vektor 2</h2>
-            </div>
-            <!-- {/* untuk Variabel I */} -->
-            <div class="text-center">I</div>
-            <div>
-              <input type="number" id="vektor1I" class="w-10 bg-black-900 text-white" />
-            </div>
-            <div>
-              <input type="number" id="vektor2I" class="w-10 bg-black-900 text-white" />
-            </div>
-            <!-- {/* Untuk variabel J */} -->
-            <div class="text-center">J</div>
-            <div>
-              <input type="number" id="vektor1J" class="w-10 bg-black-900 text-white" />
-            </div>
-            <div>
-              <input type="number" id="vektor2J" class="w-10 bg-black-900 text-white" />
-            </div>
-            <!-- {/* Untuk variabel K */} -->
-            <div class="text-center">K</div>
-            <div>
-              <input type="number" id="vektor1K" class="w-10 bg-black-900 text-white" />
-            </div>
-            <div>
-              <input type="number" id="vektor2K" class="w-10 bg-black-900 text-white" />
-            </div>
-          </div>
-          <div class="flex flex-col justify-center">
-            <button
-              id="hitungBtn"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    <div class="fixed top-0 z-[999git ] h-20 navbar bg-gray-900 bg-opacity-75 text-white lg:px-10">
+      <div class="navbar-start w-full flex justify-between lg:justify-normal pt-3">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Hitung
-            </button>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- Batas Input -->
-    <!-- Hasil Hitung -->
-    <div
-      class="w-full h-full border bg-black text-white rounded-lg border-gray-300"
-    >
-      <div class="grid grid-cols-3 h-full">
-        <div class="border p-3">
-          <h1>Perkalian vektor</h1>
-        </div>
-        <div class="border p-3">
-          <h1 class="text-center">=</h1>
-        </div>
-        <div class="border p-3">
-          <h1 id="perkalianVektor"></h1>
-        </div>
-      </div>
-      <div class="grid grid-cols-3">
-        <div class="border p-3">
-          <h1>Sudut antara 2 vektor</h1>
-        </div>
-        <div class="border p-3">
-          <h1 class="text-center">=</h1>
-        </div>
-        <div class="border p-3">
-          <h1 id="sudutVektor"></h1>
-        </div>
-      </div>
-      <div class="grid grid-cols-3">
-        <div class="h-full border-b-0 border p-3">
-          <h1>Kosinus arah vektor</h1>
-        </div>
-        <div class="h-full border-b-0 border p-3">
-          <h1 class="text-center">=</h1>
-        </div>
-        <div class="h-full border border-b-0 p-3">
-          <ul>
-            <li>Vektor 1 :</li>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-900 bg-opacity-75 rounded-box w-52"
+          >
             <li>
-              <ul>
-                <li class="ml-10">cos a = <span id="v1cosA"></span></li>
-                <li class="ml-10">cos b = <span id="v1cosB"></span></li>
-                <li class="ml-10">cos c = <span id="v1cosC"></span></li>
-              </ul>
+              <a href="/index.html#home">Home</a>
             </li>
-            <li>Vektor 2 :</li>
             <li>
-              <ul>
-                <li class="ml-10">cos a = <span id="v2cosA"></span></li>
-                <li class="ml-10">cos b = <span id="v2cosB"></span></li>
-                <li class="ml-10">cos c = <span id="v2cosC"></span></li>
-              </ul>
+              <a href="/index.html#materi">Materi</a>
+            </li>
+            <li>
+              <a href="/index.html#kelompokRoot">Kelompok</a>
+            </li>
+            <li>
+              <a href="#">Kalkulator</a>
             </li>
           </ul>
         </div>
+        <a class="btn btn-ghost text-3xl">Universitas Siliwangi</a>
+      </div>
+      <div class="navbar-end hidden pt-4 lg:flex">
+        <ul class="menu menu-horizontal px-1 gap-2">
+          <li class="text-lg">
+            <a href="/index.html#home">Home</a>
+          </li>
+          <li class="text-lg">
+            <a href="#">Kalkulator</a>
+          </li>
+          <li class="text-lg">
+            <a href="/index.html#materi">Materi</a>
+          </li>
+          <li class="text-lg">
+            <a href="/index.html#kelompokRoot">Kelompok</a>
+          </li>
+        </ul>
       </div>
     </div>
+    <!-- Navbar End -->
+    <div class="flex flex-col md:flex-row pt-20 bg-gray-900 items-center justify-center">
+      <div
+        class="flex flex-col justify-center items-center px-10 gap-10 my-10 md:w-full text-white"
+      >
+        <h1 class="text-3xl font-bold text-center">Vector Calculator</h1>
 
+        <div
+          class="flex flex-col md:w-full md:flex-row gap-8 items-stretch justify-center"
+        >
+          <div
+            class="flex flex-col justify-between gap-8 md:w-[500px] shadow-2xl py-4 px-5 bg-indigo-900 rounded-lg"
+          >
+          <h1 class="text-4xl ml-2 my-4 font-bold">Input Vektor</h1>
+            <div class="grid grid-cols-3 bg- gap-6 text-center">
+              <div class="items-center justify-center">
+                <button class="btn btn-outline rounded-full" id="clrInputBtn">Clear Input</button>
+              </div>
+              <div class="flex items-center justify-center h-full">
+                <h1 class="text-sm">Vektor 1</h1>
+              </div>
+              <div class="flex items-center justify-center h-full">
+                <h2 class="text-sm">Vektor 2</h2>
+              </div>
+              <!-- {/* untuk Variabel I */} -->
+              <div class="text-center">I</div>
+              <div>
+                <input
+                  type="number"
+                  id="vektor1I"
+                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white"
+                />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="vektor2I"
+                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white"
+                />
+              </div>
+              <!-- {/* Untuk variabel J */} -->
+              <div class="text-center">J</div>
+              <div>
+                <input
+                  type="number"
+                  id="vektor1J"
+                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white"
+                />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="vektor2J"
+                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white"
+                />
+              </div>
+              <!-- {/* Untuk variabel K */} -->
+              <div class="text-center">K</div>
+              <div>
+                <input
+                  type="number"
+                  id="vektor1K"
+                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white"
+                />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="vektor2K"
+                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white"
+                />
+              </div>
+            </div>
+            
+            <div class="flex flex-col justify-center">
+              <button
+                id="hitungBtn"
+                class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 my-4 px-4 rounded"
+              >
+                Hitung
+              </button>
+            </div>
+          </div>
+
+          <!-- Hasil Hitung -->
+          <div
+            class="flex flex-col w-full h-full bg-indigo-900 shadow-2xl text-white py-4 px-6 rounded-lg border-gray-300"
+          >
+          <h1 class="text-4xl ml-2 my-4 font-bold">Hasil Hitung</h1>
+            <div class="grid grid-cols-3 h-full">
+              <div class="p-3">
+                <h1>Perkalian vektor <br>(dot product)</h1>
+              </div>
+              <div class="p-3">
+                <h1 class="text-center">=</h1>
+              </div>
+              <div class="p-3">
+                <h1 id="perkalianVektor"></h1>
+              </div>
+            </div>
+            <div class="grid grid-cols-3">
+              <div class="p-3">
+                <h1>Sudut antara 2 vektor</h1>
+              </div>
+              <div class="p-3">
+                <h1 class="text-center">=</h1>
+              </div>
+              <div class="p-3">
+                <h1 id="sudutVektor"></h1>
+              </div>
+            </div>
+            <div class="grid grid-cols-3">
+              <div class="p-3">
+                <h1>Kosinus arah vektor</h1>
+              </div>
+              <div class="p-3">
+                <h1 class="text-center">=</h1>
+              </div>
+              <div class="h-full p-3">
+                <ul class="flex flex-col gap-2">
+                  <li>Vektor 1 :</li>
+                  <li>
+                    <ul class="flex flex-col gap-2">
+                      <li id="alpha1" class="ml-10">cos a = <span id="v1cosA"></span></li>
+                      <li id="beta1" class="ml-10">
+                        cos b = <span id="v1cosB"></span>
+                      </li>
+                      <li id="gamma1" class="ml-10">cos c = <span id="v1cosC"></span></li>
+                    </ul>
+                  </li>
+                  <li>Vektor 2 :</li>
+                  <li>
+                    <ul class="flex flex-col gap-2">
+                      <li id="alpha2" class="ml-10">cos a = <span id="v2cosA"></span></li>
+                      <li id="beta2" class="ml-10">cos b = <span id="v2cosB"></span></li>
+                      <li id="gamma2" class="ml-10">cos c = <span id="v2cosC"></span></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Batas Input -->
+      <!-- Hasil Hitung -->
+    </div>
     <script type="module" src="rumus.js"></script>
     <script type="module" src="script.js"></script>
   </body>
