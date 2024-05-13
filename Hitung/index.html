@@ -10,14 +10,21 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.js"></script>
   </head>
   <body>
-    <div class="fixed top-0 z-[999git ] h-20 navbar bg-gray-900 bg-opacity-75 text-white lg:px-10">
-      <div class="navbar-start w-full flex justify-between lg:justify-normal pt-3">
+    <div
+      class="fixed top-0 z-[999git ] h-20 navbar bg-gray-900 bg-opacity-75 text-white lg:px-10"
+    >
+      <div
+        class="navbar-start w-full flex justify-between lg:justify-normal pt-3"
+      >
         <div class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
             <svg
@@ -53,7 +60,22 @@
             </li>
           </ul>
         </div>
-        <a class="btn btn-ghost text-3xl">Universitas Siliwangi</a>
+        <a class="flex items-center gap-3 cursor-pointer"
+          ><img
+            src="../asset/images/logounsil.png"
+            alt=""
+            class="w-12 hidden md:block"
+          />
+          <div>
+            <h1 class="text-2xl font-semibold">Universitas Siliwangi</h1>
+            <p class="text-right md:text-left">Kelompok 3</p>
+          </div>
+          <img
+            src="../asset/images/logounsil.png"
+            alt=""
+            class="w-12 md:hidden"
+          />
+        </a>
       </div>
       <div class="navbar-end hidden pt-4 lg:flex">
         <ul class="menu menu-horizontal px-1 gap-2">
@@ -73,7 +95,9 @@
       </div>
     </div>
     <!-- Navbar End -->
-    <div class="flex flex-col md:flex-row pt-20 bg-gray-900 items-center justify-center">
+    <div
+      class="flex flex-col md:flex-row pt-20 bg-gray-900 items-center justify-center"
+    >
       <div
         class="flex flex-col justify-center items-center px-10 gap-10 my-10 md:w-full text-white"
       >
@@ -85,10 +109,12 @@
           <div
             class="flex flex-col justify-between gap-8 md:w-[500px] shadow-2xl py-4 px-5 bg-indigo-900 rounded-lg"
           >
-          <h1 class="text-4xl ml-2 my-4 font-bold">Input Vektor</h1>
+            <h1 class="text-4xl ml-2 my-4 font-bold">Input Vektor</h1>
             <div class="grid grid-cols-3 bg- gap-6 text-center">
               <div class="items-center justify-center">
-                <button class="btn btn-outline rounded-full" id="clrInputBtn">Clear Input</button>
+                <button class="btn btn-outline rounded-full" id="clrInputBtn">
+                  Clear Input
+                </button>
               </div>
               <div class="flex items-center justify-center h-full">
                 <h1 class="text-sm">Vektor 1</h1>
@@ -145,7 +171,7 @@
                 />
               </div>
             </div>
-            
+
             <div class="flex flex-col justify-center">
               <button
                 id="hitungBtn"
@@ -160,10 +186,10 @@
           <div
             class="flex flex-col w-full h-full bg-indigo-900 shadow-2xl text-white py-4 px-6 rounded-lg border-gray-300"
           >
-          <h1 class="text-4xl ml-2 my-4 font-bold">Hasil Hitung</h1>
+            <h1 class="text-4xl ml-2 my-4 font-bold">Hasil Hitung</h1>
             <div class="grid grid-cols-3 h-full">
               <div class="p-3">
-                <h1>Perkalian vektor <br>(dot product)</h1>
+                <h1>Perkalian vektor <br />(dot product)</h1>
               </div>
               <div class="p-3">
                 <h1 class="text-center">=</h1>
@@ -195,19 +221,29 @@
                   <li>Vektor 1 :</li>
                   <li>
                     <ul class="flex flex-col gap-2">
-                      <li id="alpha1" class="ml-10">cos a = <span id="v1cosA"></span></li>
+                      <li id="alpha1" class="ml-10">
+                        cos a = <span id="v1cosA"></span>
+                      </li>
                       <li id="beta1" class="ml-10">
                         cos b = <span id="v1cosB"></span>
                       </li>
-                      <li id="gamma1" class="ml-10">cos c = <span id="v1cosC"></span></li>
+                      <li id="gamma1" class="ml-10">
+                        cos c = <span id="v1cosC"></span>
+                      </li>
                     </ul>
                   </li>
                   <li>Vektor 2 :</li>
                   <li>
                     <ul class="flex flex-col gap-2">
-                      <li id="alpha2" class="ml-10">cos a = <span id="v2cosA"></span></li>
-                      <li id="beta2" class="ml-10">cos b = <span id="v2cosB"></span></li>
-                      <li id="gamma2" class="ml-10">cos c = <span id="v2cosC"></span></li>
+                      <li id="alpha2" class="ml-10">
+                        cos a = <span id="v2cosA"></span>
+                      </li>
+                      <li id="beta2" class="ml-10">
+                        cos b = <span id="v2cosB"></span>
+                      </li>
+                      <li id="gamma2" class="ml-10">
+                        cos c = <span id="v2cosC"></span>
+                      </li>
                     </ul>
                   </li>
                 </ul>
