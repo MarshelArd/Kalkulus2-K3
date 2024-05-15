@@ -1,6 +1,7 @@
+/* CSS MATERI */
 .parallax-container {
   position: relative;
-  height: 100vh; /* Adjust as needed */
+  height: 100vh; 
   overflow: hidden;
 }
 
@@ -18,7 +19,6 @@ html {
   left: 0;
   z-index: -1;
   transform: translateZ(-1px) scale(2);
-  /* You can adjust the translateZ and scale values to get the desired effect */
 }
 
 .section {
@@ -105,6 +105,8 @@ html {
 .rumus {
   padding-top: 40px;
 }
+/* CSS MATERI */
+
 
 /* CSS KELOMPOK */
 
