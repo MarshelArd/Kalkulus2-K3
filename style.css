@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .parallax-background {
   background: url('pexels-martin-dusek-174674-566862.jpg') no-repeat center center;
   background-size: cover;

@@ -46,7 +46,7 @@ const autoPlay = () => {
     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
 }
 
-autoPlay();
+// autoPlay();
 
 const infiniteScroll = () => {
     if(carousel.scrollLeft === 0) {
