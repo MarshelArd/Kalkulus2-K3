@@ -1,52 +1,75 @@
 // Kelompok JS
 
-const kelompokRoot = document.getElementById("kelompokRoot");
+const wrapper = document.querySelector(".kelompokwrapper");
+const carousel = document.querySelector(".kelompokcarousel");
+const arrowBtns = document.querySelectorAll(".kelompokwrapper i");
+const firstCardWidth = carousel.querySelector(".kelompokcard").offsetWidth;
+const carouselChildrens = [...carousel.children];
 
-const datas = [
-  {
-    nama: "Riqza Harly Saputra",
-    NPM: "237006055",
-    foto: "https://simak.unsil.ac.id/us-unsil/foto/2023/237006055.jpg",
-  },
-  {
-    nama: "Diva Marshelano Ardentinnova S",
-    NPM: "237006041",
-    foto: "https://simak.unsil.ac.id/us-unsil/foto/2023/237006041.jpg",
-  },
-  {
-    nama: "Widia Senja Rahayu",
-    NPM: "237006024",
-    foto: "https://simak.unsil.ac.id/us-unsil/foto/2023/237006024.jpg",
-  },
-  {
-    nama: "Mohammad Daffa Pradiva Untara",
-    NPM: "237006061",
-    foto: "https://simak.unsil.ac.id/us-unsil/foto/2023/237006061.jpg",
-  },
-  {
-    nama: "Bakti Dwi Pamungkas",
-    NPM: "237006049",
-    foto: "https://simak.unsil.ac.id/us-unsil/foto/2023/237006059.jpg",
-  },
-];
+let isDragging = false, startX, startScrollLeft, timeoutId;
 
-const createCard = (data) => {
-  return `
-  <div class="card w-64 h-[60vh] bg-base-100 shadow-xl">
-  <figure><img class="object-center" src=${data.foto} alt=${data.nama} /></figure>
-  <div class="card-body h-40 flex flex-col items-center justify-around">
-    <h2 class="card-title text-base text-center">${data.nama}</h2>
-    <p class="text-center">${data.NPM}</p>
-  </div>
-  `;
-};
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
+carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
 
-window.onload = () => {
-    datas.forEach((data) => {
-      kelompokRoot.innerHTML += createCard(data);
-    });
+carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+
+arrowBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+    })
+});
+
+const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
 }
+
+const dragging = (e) => {
+    if(!isDragging) return;
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+}
+
+const autoPlay = () => {
+    if(window.innerWidth < 800) return;
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+}
+
+autoPlay();
+
+const infiniteScroll = () => {
+    if(carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    } else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+
+    clearTimeout(timeoutId);
+    if(!wrapper.matches(":hover")) autoPlay();
+}
+
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
 
 // Kelompok JS
 

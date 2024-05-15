@@ -8,8 +8,6 @@ import {
 
 const MQ = MathQuill.getInterface(2);
 
-
-
 const vektor1I = document.getElementById("vektor1I");
 const vektor1J = document.getElementById("vektor1J");
 const vektor1K = document.getElementById("vektor1K");
@@ -43,7 +41,7 @@ clearInputBtn.addEventListener("click", (e) => {
   vektor2I.value = "";
   vektor2J.value = "";
   vektor2K.value = "";
-})
+});
 
 hitungBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -53,7 +51,13 @@ hitungBtn.addEventListener("click", (e) => {
     vektor2I.value === "" ||
     vektor2J.value === ""
   )
-    return alert("Input tidak boleh kosong");
+    return Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      color : "white",
+      background : "#091A2B",
+      text: "Input minimal vektor 2 dimensi di kedua vektor!",
+    });
   vektor1K.value === ""
     ? (data.vector1 = [vektor1I.value, vektor1J.value])
     : (data.vector1 = [vektor1I.value, vektor1J.value, vektor1K.value]);
@@ -61,13 +65,16 @@ hitungBtn.addEventListener("click", (e) => {
     ? (data.vector2 = [vektor2I.value, vektor2J.value])
     : (data.vector2 = [vektor2I.value, vektor2J.value, vektor2K.value]);
   if (data.vector1.length !== data.vector2.length) {
-    alert("Jumlah vektor harus sama");
-    return null;
+    return Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Jenis vektor harus sama (2 atau 3 dimensi saja)!",
+    });
   }
   //   end inputing data
 
   // processing data
-  console.log(hasil)
+  console.log(hasil);
   data.vector1?.length === 3
     ? (hasil = {
         sudutVektor: angleBetweenVectors(data.vector1, data.vector2),
@@ -120,7 +127,6 @@ hitungBtn.addEventListener("click", (e) => {
 
   hasil ? calculated() : null;
 
-
   MQ.StaticMath(hasilKali);
   MQ.StaticMath(hasilSudut);
   MQ.StaticMath(v1cosA);
@@ -129,8 +135,6 @@ hitungBtn.addEventListener("click", (e) => {
   MQ.StaticMath(v2cosA);
   MQ.StaticMath(v2cosB);
   MQ.StaticMath(v2cosC);
-
-  
 
   console.log(hasil);
 });
