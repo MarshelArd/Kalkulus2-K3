@@ -17,6 +17,7 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <div
@@ -29,7 +30,7 @@
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10"
+              class="h-10 w-8 h-8 text-2xl text-center"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -44,7 +45,7 @@
           </div>
           <ul
             tabindex="0"
-            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-900 bg-opacity-75 rounded-box w-52"
+            class="menu menu-xl dropdown-content mt-3 z-[1] p-2 shadow bg-gray-900 bg-opacity-75 rounded-box w-52"
           >
             <li>
               <a href="/index.html#home">Home</a>
@@ -101,78 +102,94 @@
       <div
         class="flex flex-col justify-center items-center px-10 gap-10 my-10 md:w-full text-white"
       >
-        <h1 class="text-3xl font-bold text-center">Vector Calculator</h1>
+        <h1 class="text-4xl font-bold text-center">Vector Calculator</h1>
 
         <div
-          class="flex flex-col md:w-full md:flex-row gap-8 items-stretch justify-center"
+          class="flex flex-col md:w-full md:flex-row gap-8 items-stretch justify-center min-h-[620px]"
         >
           <div
             class="flex flex-col justify-between gap-8 md:w-[500px] shadow-2xl py-4 px-5 bg-indigo-900 rounded-lg"
           >
-          <div class="flex justify-between">
+            <div class="flex justify-between items-center">
+              <h1 class="text-4xl ml-2 my-4 font-bold">Input Vektor</h1>
+              <img src="../asset/images/info.svg" class="h-8" />
+            </div>
+            <div
+              class="flex flex-col items-center justify-around h-full text-center"
+            >
+              <!-- first row -->
+              <div class="grid grid-cols-3 gap-9">
+                <div class="items-center justify-center">
+                  <button
+                    class="btn btn-outline rounded-full text-white border-white"
+                    id="clrInputBtn"
+                  >
+                    Clear Input
+                  </button>
+                </div>
+                <div class="flex items-center justify-center h-full">
+                  <h1 class="text-xl">Vektor 1</h1>
+                </div>
+                <div class="flex items-center justify-center h-full">
+                  <h2 class="text-xl">Vektor 2</h2>
+                </div>
+              </div>
 
-            <h1 class="text-4xl ml-2 my-4 font-bold">Input Vektor</h1>
-            <img src="../asset/images/info.svg"/>
-          </div>
-            <div class="grid grid-cols-3 bg- gap-6 text-center">
-              <div class="items-center justify-center">
-                <button class="btn btn-outline rounded-full" id="clrInputBtn">
-                  Clear Input
-                </button>
+              <!-- second row -->
+              <div class="grid grid-cols-3 gap-14">
+                <div class="text-center text-4xl">I</div>
+                <div>
+                  <input
+                    type="number"
+                    id="vektor1I"
+                    class="w-8 h-8 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    id="vektor2I"
+                    class="w-8 h-8 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                  />
+                </div>
               </div>
-              <div class="flex items-center justify-center h-full">
-                <h1 class="text-sm">Vektor 1</h1>
+
+              <!-- {third row} -->
+              <div class="grid grid-cols-3 gap-14">
+                <div class="text-center text-4xl">J</div>
+                <div>
+                  <input
+                    type="number"
+                    id="vektor1J"
+                    class="w-8 h-8 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    id="vektor2J"
+                    class="w-8 h-8 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                  />
+                </div>
               </div>
-              <div class="flex items-center justify-center h-full">
-                <h2 class="text-sm">Vektor 2</h2>
-              </div>
-              <!-- {/* untuk Variabel I */} -->
-              <div class="text-center">I</div>
-              <div>
-                <input
-                  type="number"
-                  id="vektor1I"
-                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
-                />
-              </div>
-              <div>
-                <input
-                  type="number"
-                  id="vektor2I"
-                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
-                />
-              </div>
-              <!-- {/* Untuk variabel J */} -->
-              <div class="text-center">J</div>
-              <div>
-                <input
-                  type="number"
-                  id="vektor1J"
-                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
-                />
-              </div>
-              <div>
-                <input
-                  type="number"
-                  id="vektor2J"
-                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
-                />
-              </div>
-              <!-- {/* Untuk variabel K */} -->
-              <div class="text-center">K</div>
-              <div>
-                <input
-                  type="number"
-                  id="vektor1K"
-                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
-                />
-              </div>
-              <div>
-                <input
-                  type="number"
-                  id="vektor2K"
-                  class="w-10 bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
-                />
+
+              <!-- Fourth row -->
+              <div class="grid grid-cols-3 gap-14 items-center">
+                <div class="text-center text-4xl">K</div>
+                <div>
+                  <input
+                    type="number"
+                    id="vektor1K"
+                    class="w-8 h-8 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    id="vektor2K"
+                    class="w-8 h-8 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                  />
+                </div>
               </div>
             </div>
 
@@ -188,9 +205,11 @@
 
           <!-- Hasil Hitung -->
           <div
-            class="flex flex-col w-full h-full bg-indigo-900 shadow-2xl text-white py-4 px-6 rounded-lg border-gray-300"
+            class="flex flex-col w-full h-full bg-indigo-900 shadow-2xl text-white py-4 px-6 rounded-lg border-gray-300 min-h-[620px]"
           >
-            <h1 class="text-4xl ml-2 my-4 font-bold">Hasil Hitung</h1>
+            <h1 class="text-4xl ml-2 my-4 font-bold text-shadow">
+              Hasil Hitung
+            </h1>
             <div class="grid grid-cols-3 h-full">
               <div class="p-3">
                 <h1>Perkalian vektor <br />(dot product)</h1>
@@ -213,32 +232,30 @@
                 <h1 id="sudutVektor"></h1>
               </div>
             </div>
-            <div class="grid grid-cols-3">
-              <div class="p-3">
-                <h1>Kosinus arah vektor</h1>
-              </div>
-              <div class="p-3">
-                <h1 class="text-center">=</h1>
-              </div>
-              <div class="h-full p-3">
-                <ul class="flex flex-col gap-2">
-                  <li>Vektor 1 :</li>
-                  <li>
-                    <ul class="flex flex-col gap-2">
-                      <li id="alpha1" class="ml-10">
-                        cos a = <span id="v1cosA"></span>
-                      </li>
-                      <li id="beta1" class="ml-10">
-                        cos b = <span id="v1cosB"></span>
-                      </li>
-                      <li id="gamma1" class="ml-10">
-                        cos c = <span id="v1cosC"></span>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>Vektor 2 :</li>
-                  <li>
-                    <ul class="flex flex-col gap-2">
+
+            <div class="p-3 grid-col-span-3">
+              <h1>Kosinus arah vektor :</h1>
+            </div>
+            <div class="h-full p-3">
+              <div class="flex justify-around gap-2">
+                <div class="flex">
+                  <h1>Vektor 1 :</h1>
+                  <ul class="flex flex-col gap-10">
+                    <li id="alpha1" class="ml-10">
+                      cos a = <span id="v1cosA"></span>
+                    </li>
+                    <li id="beta1" class="ml-10">
+                      cos b = <span id="v1cosB"></span>
+                    </li>
+                    <li id="gamma1" class="ml-10">
+                      cos c = <span id="v1cosC"></span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h1>Vektor 2 :</h1>
+                  <div>
+                    <ul class="flex flex-col gap-10">
                       <li id="alpha2" class="ml-10">
                         cos a = <span id="v2cosA"></span>
                       </li>
@@ -249,8 +266,8 @@
                         cos c = <span id="v2cosC"></span>
                       </li>
                     </ul>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
