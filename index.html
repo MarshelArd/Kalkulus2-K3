@@ -11,62 +11,81 @@
   </head>
   <body>
     <!-- Navbar Start -->
-    <div class="fixed top-0 z-[999git ] navbar bg-base-100 lg:px-10">
-        <div class="navbar-start w-full flex justify-between lg:justify-normal">
-          <div class="dropdown">
-            <div tabIndex=0 role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+    <div
+      class="fixed top-0 z-[999] h-[90px] navbar bg-gray-900 bg-opacity-75 text-white lg:px-10"
+    >
+      <div
+        class="navbar-start w-full flex justify-between lg:justify-normal pt-3"
+      >
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-12 h-12 text-2xl text-center"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Materi</a>
-              </li>
-              <li>
-                <a>Help</a>
-              </li>
-              <li>
-                <a>Kelompok</a>
-              </li>
-            </ul>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
           </div>
-          <a class="btn btn-ghost text-xl">Universitas Siliwangi</a>
-        </div>
-        <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 gap-4">
+          <ul
+            tabindex="0"
+            class="menu menu-xl dropdown-content mt-3 z-[1] p-2 shadow bg-gray-900 bg-opacity-75 rounded-box w-52"
+          >
             <li>
-              <a>Home</a>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#materi">Materi</a>
+            </li>
+            <li>
+              <a href="#kelompokRoot">Kelompok</a>
             </li>
             <li>
               <a href="/Hitung/index.html">Kalkulator</a>
             </li>
-            <li>
-              <a>Help</a>
-            </li>
-            <li>
-              <a>Kelompok</a>
-            </li>
           </ul>
         </div>
+        <a class="flex items-center gap-3 cursor-pointer"
+          ><img
+            src="../asset/images/logounsil.png"
+            alt=""
+            class="w-12 hidden md:block"
+          />
+          <div>
+            <h1 class="text-2xl font-semibold">Universitas Siliwangi</h1>
+            <p class="text-right md:text-left">Kelompok 3</p>
+          </div>
+          <img
+            src="../asset/images/logounsil.png"
+            alt=""
+            class="w-12 md:hidden"
+          />
+        </a>
       </div>
+      <div class="navbar-end hidden pt-4 lg:flex">
+        <ul class="menu menu-horizontal px-1 gap-2">
+          <li class="text-lg">
+            <a href="#home">Home</a>
+          </li>
+          <li class="text-lg">
+            <a href="/Hitung/">Kalkulator</a>
+          </li>
+          <li class="text-lg">
+            <a href="#materi">Materi</a>
+          </li>
+          <li class="text-lg">
+            <a href="#kelompokRoot">Kelompok</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <!-- Navbar End -->
     <!-- Hero Start -->
     <div class="hero min-h-screen" style="background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-mathematics-books-green-simplicity-image_782466.jpg);">

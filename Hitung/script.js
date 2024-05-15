@@ -68,6 +68,8 @@ hitungBtn.addEventListener("click", (e) => {
     return Swal.fire({
       icon: "error",
       title: "Oops...",
+      color : "white",
+      background : "#091A2B",
       text: "Jenis vektor harus sama (2 atau 3 dimensi saja)!",
     });
   }
