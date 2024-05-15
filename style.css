@@ -1,8 +1,9 @@
 /* CSS MATERI */
 .parallax-container {
   position: relative;
-  height: 100vh; 
+  height: 105vh; 
   overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -10,7 +11,7 @@ html {
 }
 
 .parallax-background {
-  background: url('pexels-martin-dusek-174674-566862.jpg') no-repeat center center;
+  background-image: linear-gradient(to right, #4d156d, #3b1c68, #2a1f61, #1a2058, #0c1f4e, #07224e, #03244e, #01264d, #022d57, #023560, #013d6a, #004574); 
   background-size: cover;
   position: absolute;
   height: 120%;
@@ -28,7 +29,7 @@ html {
   max-width: 1100px;
   width: 100%;
   height: 100vh;
-  margin-top: 15px;
+  margin-top: 25px;
   margin-bottom: 120px;
   position: relative;
   overflow: hidden;
@@ -51,12 +52,12 @@ html {
 }
 
 .section i:first-child {
-  margin-left: 270px;
+  margin-left: 210px;
   margin-top: -40px;
 }
 
 .section i:last-child {
-  margin-left: 1070px;
+  margin-left: 1010px;
   margin-top: -40px;
 }
 
@@ -67,7 +68,7 @@ html {
   gap: 20px;
   position: static;
   margin-top: 100px;
-  margin-left: 270px;
+  margin-left: 210px;
   text-align: center;
   transition: transform 0.5s ease-in-out;
 }
@@ -89,12 +90,13 @@ html {
   padding: 50px;
   box-shadow: 5px 5px 8px 0 white;
   width: 800px;
-  height: 450px;
+  height: 400px;
   position: static;
 }
 
 .judul {
   font-size: 40px;
+  color: #fff;
 }
 
 .paragrafmateri {
