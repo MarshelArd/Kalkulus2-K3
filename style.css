@@ -2,6 +2,7 @@
 .parallax-container {
   position: relative;
   height: 105vh; 
+  display: flex;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
 }
@@ -87,8 +88,7 @@ html {
 
 .cardMateri {
   border-radius: 5px;
-  padding: 50px;
-  box-shadow: 5px 5px 8px 0 white;
+  box-shadow: 5px 5px 8px 0 black;
   width: 800px;
   height: 400px;
   position: static;
@@ -106,6 +106,45 @@ html {
 
 .rumus {
   padding-top: 40px;
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    margin-top: 130px;
+    margin-left: 50px;
+  }
+  .section .ul-listMateri {
+      margin-left: 50px;
+  }
+  .cardMateri {
+    width: 700px;
+    height: 800px;
+  }
+  .section i:first-child {
+    margin-left: 50px;
+    margin-top: -100px;
+  }
+  .section i:last-child {
+    margin-left: 750px;
+    margin-top: -100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section .ul-listMateri {
+    grid-auto-columns: 100%;
+  }
+  .section {
+    margin-top: 170px;
+  }
+  .section i:first-child {
+    margin-left: 50px;
+    margin-top: -170px;
+  }
+  .section i:last-child {
+    margin-left: 550px;
+    margin-top: -170px;
+  }
 }
 /* CSS MATERI */
 
