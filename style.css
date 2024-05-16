@@ -160,11 +160,11 @@ html {
 
 .kelompokcontainer {
   display: flex;
+  padding: 0 35px;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 35px;
-  background: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background: linear-gradient(to right bottom, #4d156d, #3b1c68, #2a1f61, #1a2058, #0c1f4e, #07224e, #03244e, #01264d, #022d57, #023560, #013d6a, #004574); 
 }
 
 .kelompokwrapper {
@@ -173,52 +173,72 @@ html {
   position: relative;
 }
 
-.kelompokwrapper i {
-  height: 50px;
-  width: 50px;
-  background: #fff;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  font-size: 1.25rem;
-  transform: translateY(-50%);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+.kelompokborder {
+    border-radius: 20px;
+    background-color: #0F1D39;
+    padding: 20px 16px;
 }
 
-.kelompokwrapper h1 {
+.kelompokanggota {
+  display: flex;
   text-align: center;
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  padding: 2px;
+  font-size: 2em;
+  font-weight: bold;
   color: #fff;
 }
 
-.kelompokwrapper i:first-child {
+.kelompokwrapper i {
+  top: 55%;
+  height: 45px;
+  width: 43px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 45px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.kelompokwrapper .kelompokkiri {
+  left: -3px;
+}
+
+/* .wrapper .kanan {
+  right: -10px
+} */
+
+.kelompokwrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+
+.kelompokwrapper i:first-child{
   left: -22px;
 }
 
-.kelompokwrapper i:last-child {
-  right: -22px;
+.kelompokwrapper i:last-child{
+  right: -3px;
 }
 
-.kelompokwrapper .kelompokcarousel {
+.kelompokcarousel{
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 3) - 12px);
-  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
 
-.kelompokcarousel :where(.kelompokcard, .kelompokimg) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.kelompokcarousel::-webkit-scrollbar {
+  display: none;
 }
 
 .kelompokcarousel.no-transition {
@@ -235,54 +255,57 @@ html {
   user-select: none;
 }
 
+.kelompokcarousel :where(.kelompokcard, .kelompokimg) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .kelompokcarousel .kelompokcard {
   scroll-snap-align: start;
   height: 342px;
   list-style: none;
   background: #fff;
-  border-radius: 8px;
   cursor: pointer;
   padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
 }
 
-.kelompokcard .kelompokimg {
-  background: #8B53FF;
-  width: 148px;
+.kelompokcarousel .kelompokcard .kelompokimg {
+  background: #07224E;
   height: 148px;
+  width: 148px;
   border-radius: 50%;
 }
-
-/* .wrapper .carousel .card:nth-child(3) .img img {
-
-} */
 
 .kelompokcard .kelompokimg img {
   width: 140px;
   height: 140px;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
   border: 4px solid #fff;
 }
 
-.kelompokcard h2 {
+.kelompokcarousel .kelompokcard h2 {
   font-weight: 500;
   font-size: 1.56rem;
   margin: 30px 0 5px;
 }
 
-.kelompokcard span {
-  color: #6a6d78;
+.kelompokcarousel .kelompokcard span {
+  color: #0e0f0f;
   font-size: 1.31rem;
 }
 
 @media screen and (max-width: 900px) {
   .kelompokwrapper .kelompokcarousel {
-      grid-auto-columns: calc((100% / 2) - 9px);
+    grid-auto-columns: calc((100% / 2) - 9px);
   }
 }
 
 @media screen and (max-width: 600px) {
   .kelompokwrapper .kelompokcarousel {
-      grid-auto-columns: 100%;
+    grid-auto-columns: 100%;
   }
 }
