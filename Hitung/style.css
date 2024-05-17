@@ -13,6 +13,14 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.shadow {
+.shadow-text {
   text-shadow: 2px 2px rgba(0, 0, 0,1);
+}
+
+.shadow-kotak {
+  box-shadow: 5px 5px rgba(0, 0, 0,0.75);
+}
+
+.gradient-bg {
+  background-image: linear-gradient(to bottom, #4d156d, #3b1c68, #2a1f61, #1a2058, #0c1f4e, #07224e, #03244e, #01264d, #022d57, #023560, #013d6a, #004574);
 }

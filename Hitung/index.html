@@ -18,6 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
   </head>
   <body>
     <div
@@ -42,7 +43,7 @@
             class="w-12 hidden md:block"
           />
           <div>
-            <h1 class="text-2xl font-semibold">Universitas Siliwangi</h1>
+            <h1 class="text-xl font-semibold">Universitas Siliwangi</h1>
             <p class="text-right md:text-left">Kelompok 3</p>
           </div>
           <img
@@ -64,7 +65,7 @@
     </div>
     <!-- Navbar End -->
     <div
-      class="flex flex-col md:flex-row pt-20 bg-gray-900 items-center justify-center"
+      class="flex flex-col md:flex-row pt-20 items-center justify-center gradient-bg"
     >
       <div
         class="flex flex-col justify-center items-center px-10 gap-10 my-10 md:w-full text-white"
@@ -76,10 +77,10 @@
         >
           <!-- Input Vektor -->
           <div
-            class="flex flex-col justify-between gap-8 md:w-[500px] shadow-2xl py-4 px-5 bg-indigo-900 rounded-lg"
+            class="flex flex-col justify-between gap-8 md:w-[500px] py-4 px-5 bg-indigo-900 rounded-lg "
           >
-            <div class="flex justify-between items-center">
-              <h1 class="text-4xl ml-2 my-4 font-bold shadow">Input Vektor</h1>
+            <div class="flex justify-between items-center z-10">
+              <h1 class="text-4xl ml-2 my-4 font-bold shadow-text">Input Vektor</h1>
               <button class="" onclick="my_modal_4.showModal()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -114,17 +115,18 @@
                 </svg>
               </button>
               <dialog id="my_modal_4" class="modal">
-                <div class="modal-box w-11/12 max-w-5xl">
+                <div class="modal-box w-11/12 max-w-5xl bg-indigo-900">
                   <h3 class="font-bold text-2xl mb-4">Cara Menggunakan Kalkulator</h3>
                   <ul class="list-disc leading-8 ml-7">
                     <li>Pada Kalkulator ini terdapat 6 input yang bisa diisi hanya dengan menggunakan angka</li>
                     <li>Vektor yang diinputkan minimal vektor 2 dimensi dan maksimal vektor 3 dimensi</li>
                     <li>I,J dan K merepresentasikan sumbu pada vektor</li>
                     <li>setelah menginputkan nilainya, untuk menampilkan hasil klik tombol hitung dan hasil akan keluar di panel kanan</li>
+                    <li>klik tombol clear input untuk mengosongkan input</li>
                   <div class="modal-action">
                     <form method="dialog">
                       <!-- if there is a button, it will close the modal -->
-                      <button class="btn">Close</button>
+                      <button class="flex bg-blue-700 hover:bg-blue-600 text-white font-bold h-12 items-center py-2 my-4 px-4 rounded">Close</button>
                     </form>
                   </div>
                 </div>
@@ -152,60 +154,60 @@
               </div>
 
               <!-- second row -->
-              <div class="grid grid-cols-3 gap-[6rem] md:gap-[4.7rem]">
+              <div class="grid grid-cols-3 gap-[4rem] md:gap-[4.7rem]">
                 <div class="text-center text-2xl">I</div>
                 <div>
                   <input
                     type="number"
                     id="vektor1I"
-                    class="w-12 h-12 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                    class="w-12 h-12 text-2xl text-center bg-white px-3 py-1 rounded-lg text-black bg-gray-900"
                   />
                 </div>
                 <div>
                   <input
                     type="number"
                     id="vektor2I"
-                    class="w-12 h-12 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                    class="w-12 h-12 text-2xl text-center bg-white px-3 py-1 rounded-lg text-black bg-gray-900"
                   />
                 </div>
               </div>
 
               <!-- {third row} -->
-              <div class="grid grid-cols-3 gap-[6rem] md:gap-[4.7rem]">
+              <div class="grid grid-cols-3 gap-[4rem] md:gap-[4.7rem]">
                 <div class="text-center text-2xl">J</div>
                 <div>
                   <input
                     type="number"
                     id="vektor1J"
-                    class="w-12 h-12 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                    class="w-12 h-12 text-2xl text-center bg-white px-3 py-1 rounded-lg text-black bg-gray-900"
                   />
                 </div>
                 <div>
                   <input
                     type="number"
                     id="vektor2J"
-                    class="w-12 h-12 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                    class="w-12 h-12 text-2xl text-center bg-white px-3 py-1 rounded-lg text-black bg-gray-900"
                   />
                 </div>
               </div>
 
               <!-- Fourth row -->
               <div
-                class="grid grid-cols-3 gap-[6rem] md:gap-[4.7rem] items-center"
+                class="grid grid-cols-3 gap-[4rem] md:gap-[4.7rem] items-center"
               >
                 <div class="text-center text-2xl">K</div>
                 <div>
                   <input
                     type="number"
                     id="vektor1K"
-                    class="w-12 h-12 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                    class="w-12 h-12 text-2xl text-center bg-white px-3 py-1 rounded-lg text-black bg-gray-900"
                   />
                 </div>
                 <div>
                   <input
                     type="number"
                     id="vektor2K"
-                    class="w-12 h-12 text-2xl text-center bg-black-900 px-3 py-1 rounded-lg text-white bg-gray-900"
+                    class="w-12 h-12 text-2xl text-center bg-white px-3 py-1 rounded-lg text-black bg-gray-900"
                   />
                 </div>
               </div>
@@ -223,9 +225,9 @@
 
           <!-- Hasil Hitung -->
           <div
-            class="flex flex-col gap-8 w-full justify-around h-full bg-indigo-900 shadow-2xl text-white py-4 px-6 rounded-lg border-gray-300 min-h-[400px]"
+            class="flex flex-col gap-6 w-full justify-around h-full bg-indigo-900 shadow-2xl text-white py-4 px-6 rounded-lg shadow-lg min-h-[400px]"
           >
-            <h1 class="text-4xl ml-2 my-4 font-bold shadow">Hasil Hitung</h1>
+            <h1 class="text-4xl ml-2 my-4 font-bold shadow-text">Hasil Hitung</h1>
             <div class="grid grid-cols-3 mt-2 h-full">
               <div class="p-3">
                 <h1>Perkalian vektor <br />(dot product)</h1>
@@ -253,7 +255,7 @@
               <h1>Kosinus arah vektor :</h1>
             </div>
             <div class="h-full p-3">
-              <div class="flex justify-around gap-2">
+              <div class="flex flex-col md:flex-row justify-around gap-4 md:gap-2">
                 <div class="flex">
                   <h1>Vektor 1 :</h1>
                   <ul class="flex flex-col gap-10">
@@ -294,5 +296,6 @@
     </div>
     <script type="module" src="rumus.js"></script>
     <script type="module" src="script.js"></script>
+    
   </body>
 </html>

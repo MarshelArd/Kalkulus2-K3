@@ -55,8 +55,9 @@ hitungBtn.addEventListener("click", (e) => {
       icon: "error",
       title: "Oops...",
       color : "white",
-      background : "#091A2B",
       text: "Input minimal vektor 2 dimensi di kedua vektor!",
+      background : "#111827",
+      confirmButtonColor: "#1d4ed8",
     });
   vektor1K.value === ""
     ? (data.vector1 = [vektor1I.value, vektor1J.value])
@@ -69,8 +70,9 @@ hitungBtn.addEventListener("click", (e) => {
       icon: "error",
       title: "Oops...",
       color : "white",
-      background : "#091A2B",
       text: "Jenis vektor harus sama (2 atau 3 dimensi saja)!",
+      background : "#111827",
+      confirmButtonColor: "#1d4ed8",
     });
   }
   //   end inputing data
