@@ -20,8 +20,8 @@ html {
   max-width: 1100px;
   width: 100%;
   position: relative;
+  max-width: 1100px;
   overflow: hidden;
-
 }
 
 .section i {
@@ -61,7 +61,7 @@ html {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100 / 3) - 12px);
-  gap: 20px;
+  gap: 230px;
   position: static;
   margin-top: 110px;
   margin-left: 150px;
@@ -72,7 +72,7 @@ html {
 .ul-listMateri .cardMateri {
   list-style: none;
   scroll-snap-align: start;
-  background: linear-gradient(45deg, #4B0000, #8B0000, #4B0082);
+  background: #07224E;
   border-radius: 8px;
   display: flex;
   cursor: pointer;
@@ -142,6 +142,7 @@ html {
     margin-top: -30px;
   }
 }
+
 
 
 /* CSS MATERI */

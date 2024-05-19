@@ -89,7 +89,6 @@ wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 
 
 //Materi JS
-
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const slideContainer = document.getElementById('slideContainer');
@@ -110,9 +109,8 @@ function showSlides() {
   const slides = slideContainer.getElementsByClassName('cardMateri');
   if (slideIndex >= slides.length) { slideIndex = 0; }
   if (slideIndex < 0) { slideIndex = slides.length - 1; }
-  slideContainer.style.transform = `translateX(-${slideIndex * (slides[0].offsetWidth + 20)}px)`;
+  slideContainer.style.transform = `translateX(-${slideIndex * (slides[0].offsetWidth + 230)}px)`;
 }
-
 //Materi JS
 
 
