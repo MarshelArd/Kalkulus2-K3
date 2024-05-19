@@ -96,20 +96,20 @@ const slideContainer = document.getElementById('slideContainer');
 let slideIndex = 0;
 
 prevBtn.addEventListener('click', () => {
-  slideIndex--;
-  showSlides();
+    slideIndex--;
+    showSlides();
 });
 
 nextBtn.addEventListener('click', () => {
-  slideIndex++;
-  showSlides();
+    slideIndex++;
+    showSlides();
 });
 
 function showSlides() {
-  const slides = slideContainer.getElementsByClassName('cardMateri');
-  if (slideIndex >= slides.length) { slideIndex = 0; }
-  if (slideIndex < 0) { slideIndex = slides.length - 1; }
-  slideContainer.style.transform = `translateX(-${slideIndex * (slides[0].offsetWidth + 230)}px)`;
+    const slides = slideContainer.getElementsByClassName('cardMateri');
+    if (slideIndex >= slides.length) { slideIndex = 0; }
+    if (slideIndex < 0) { slideIndex = slides.length - 1; }
+    slideContainer.style.transform = `translateX(-${slideIndex * (slides[0].offsetWidth + 230)}px)`;
 }
 //Materi JS
 
